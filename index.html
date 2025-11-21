@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-card</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <article class="product-card">
+        <div class="product-card__header">
+            <img 
+                src="img/photo1.jpg" 
+                alt="Премиум наушники с активным шумоподавлением"
+                class="product-card__image"
+            >
+            <span class="product-card__badge">New</span>
+            <button class="product-card__favorite" aria-label="Добавить в избранное" title="Добавить в избранное">
+                ♡
+            </button>
+        </div>
+
+        <div class="product-card__body">
+            <h2 class="product-card__title">Премиум наушники с активным супербасом</h2>
+
+            <div class="product-card__rating">
+                <div class="product-card__stars">
+                    <span class="product-card__star">★</span>
+                    <span class="product-card__star">★</span>
+                    <span class="product-card__star">★</span>
+                    <span class="product-card__star">★</span>
+                    <span class="product-card__star">☆</span>
+                </div>
+                <span>4.5 (120 отзывов)</span>
+            </div>
+
+            <div class="product-card__price-container">
+                <span class="product-card__price">1 490 ₴</span>
+                <span class="product-card__price--old">1 990 ₴</span>
+            </div>
+
+            <button class="product-card__button">Добавить в корзину</button>
+        </div>
+    </article>
+
+    <script>
+        const favoriteBtn = document.querySelector('.product-card__favorite');
+
+        favoriteBtn.addEventListener('click', function() {
+            this.classList.toggle('product-card__favorite--active');
+            this.textContent = this.classList.contains('product-card__favorite--active') ? '♥' : '♡';
+        });
+    </script>
+</body>
+</html>
